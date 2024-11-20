@@ -1039,10 +1039,102 @@ function step3(){
 
 // console.log(document);
   
- let h1=  document.querySelector('h1')
- h1.style.color='red'
+//  let h1=  document.getElementsByClassName('two')
+//  console.log(h1);
+ 
+// let div=  document.querySelector('div')
+//  let h1=   document.createElement('h1')
+//  let p=   document.createElement('p')
+// p.innerText=',mai hu p tags'
+//  h1.innerText='hello'
+//  div.append(h1,p)
+//  console.log(div,"heheh");
+ 
+//  let h2=   document.querySelector('h2')
+//  h2.innerText='hiii'
+//  console.log(h2.innerText);
+ 
+
+//  h1[0].style.color='red'
+//  h1[1].style.color='red'
+
+// for(let i of h1){
+//   i.style.color='red'
+// }
+
 
 //  console.log(h1);
+// Event
+// let bodyTags= document.querySelector('body')
+//   function fun1(){
+//     console.log('byeeee');
+//     bodyTags.style.backgroundColor='yellow'
+    
+//   }
+
+
+   let btn=  document.querySelector('button')
+  let body=    document.querySelector('body')
+   btn.addEventListener('click',()=>{
+    // console.log('helloooo');
+    body.style.backgroundColor='gold'
+    
+   }
+
+   )
+
+
+  //  input Event
+
+//  let inp=   document.querySelector('input')
+//  let h2=   document.querySelector('h2')
+
+
+//  inp.addEventListener('input',(e)=>{
+//   // console.log('tumse na ho payegaaaa!!!..???');
+//   // console.log(e.target.value);
+//   h2.innerText=e.target.value
+  
+  
+//  })
+
+  // let div=   document.querySelector('div')
+  // let arr=['https://images.unsplash.com/photo-1731334725894-4dd2800b5d97?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D','b']
+
+  // img.setAttribute('src', 'https://images.unsplash.com/photo-1731334725894-4dd2800b5d97?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+
+
+  // let arr=['https://images.unsplash.com/photo-1731334725894-4dd2800b5d97?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D','https://images.unsplash.com/photo-1719937206642-ca0cd57198cc?q=80&w=3600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D','https://images.unsplash.com/photo-1731517515193-0518a1eb2034?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D']
+  //  let img=   document.querySelector('img')
+  //  let num=0
+  //  setInterval(()=>{
+  //   img.setAttribute('src',arr[num])
+  //   num=(num+1)%arr.length
+  //  },2000)
+
+   let inp=    document.querySelector('input')
+   let btn1=   document.querySelector('button')
+  let ul=     document.querySelector('ul')
+      
+
+  btn1.addEventListener('click',()=>{
+    // let data=inp.value
+  let li=   document.createElement('li')
+  li.innerText=inp.value
+  ul.append(li)
+  inp.value=''
+
+  })
+
+
+
+
+
+
+
+
+
+
  
 
 
