@@ -1,0 +1,26 @@
+#card{
+    height: 251px;
+    width: 201px;
+    display: inline-block;
+    margin: 10px;
+    background-color: antiquewhite;
+    position: relative;
+
+}
+
+      #card-a img{
+    border-radius: 5px;
+    height: 50%;
+    width: 100%;
+
+}
+
+#card-b img{
+    height: 50%;
+    width: 120px;
+    border-radius: 50%;
+    position: absolute;
+    /* top: -10px; */
+    bottom: 68px;
+    left: 40px;
+}
