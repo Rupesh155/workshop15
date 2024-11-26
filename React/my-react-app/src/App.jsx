@@ -139,18 +139,26 @@ const App = () => {
     })
   }, [])
 
+  function d(id){
+    console.log(id,"hehehehe");
+      let filterData= apiData.filter((a,b)=>{
+      return b!=id
+
+    })
+    SetApiData(filterData)
+    
+
+  }
 
   return (
 
     <div>
       {
-        apiData.map((val) => {
+        apiData.map((val,index) => {
           console.log(val, "heheheh");
-
           return (<div id='main' >
-            <div id='card'>
-              <img src={val.
-                image} />
+            <div id='card' onClick={()=>d(index)}>
+              <img src={val.image} />
               <h4>{val.name}</h4>
             </div>
 
