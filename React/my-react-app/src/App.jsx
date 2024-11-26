@@ -172,21 +172,65 @@
 // export default App
 
 
+// import React, { useState } from 'react'
+// const App = () => {
+//   let [data,SetData]=useState('')
+//   function fun1(e){
+//     console.log(e.target.value);
+//     SetData(e.target.value) 
+//   }
+//   function store(){
+//     localStorage.setItem('user',data)
+//   }
+//   return (
+//     <div>
+//       <h1> {data}</h1>
+//       <input  onChange={fun1} placeholder='Enter your name'/>
+//       <button onClick={store}>click</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
 import React, { useState } from 'react'
+
 const App = () => {
-  let [data,SetData]=useState('')
-  function fun1(e){
-    console.log(e.target.value);
-    SetData(e.target.value) 
-  }
-  function store(){
-    localStorage.setItem('user',data)
+  let [input,SetInput]=useState({
+    name:"",
+    email:"",
+    passWord:""
+
+  })
+  function fun1(a){
+    let {name,value}=a.target
+    // console.log(name,value,'hellloo');
+    SetInput({...input,[name]:value})
+    console.log(input,"isse dekhooo");
+
+        // console.log(   a.target);
+      
+    // SetInput(a.target.value
   }
   return (
     <div>
-      <h1> {data}</h1>
-      <input  onChange={fun1} placeholder='Enter your name'/>
-      <button onClick={store}>click</button>
+    <fieldset>  
+      <legend> Form</legend>
+      <form>
+        <input onChange={fun1} name='name' value={input.name}  placeholder='Enter your name' />
+        <br></br>
+        <br></br>
+
+        <input placeholder='Enter email'  name='email'  value={input.email} onChange={fun1}  />
+        <br></br>
+        <br></br>
+        <input  type='password'  onChange={fun1}  name='passWord'  value={input.passWord} placeholder='Enter password' />
+
+      </form>
+      </fieldset>
     </div>
   )
 }
@@ -195,6 +239,15 @@ export default App
 
 
 
+
+
+
+// let obj={
+//   name:"",
+//   value:""
+// }
+
+// let {name,value}=obj
 
 
 
