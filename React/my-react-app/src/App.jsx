@@ -122,49 +122,71 @@
 
 
 
-import React, { useEffect, useState } from 'react'
-import './App.css'
-const App = () => {
-  let [apiData, SetApiData] = useState([])
-  console.log('hellloooo');
+// import React, { useEffect, useState } from 'react'
+// import './App.css'
+// const App = () => {
+//   let [apiData, SetApiData] = useState([])
+//   console.log('hellloooo');
 
-  useEffect(() => {
-    fetch('https://dummyjson.com/recipes').then((res) => {
-      return res.json()
+//   useEffect(() => {
+//     fetch('https://dummyjson.com/recipes').then((res) => {
+//       return res.json()
 
-    }).then((data) => {
-      console.log(data);
-      SetApiData(data.recipes)
+//     }).then((data) => {
+//       console.log(data);
+//       SetApiData(data.recipes)
 
-    })
-  }, [])
+//     })
+//   }, [])
 
-  function d(id){
-    console.log(id,"hehehehe");
-      let filterData= apiData.filter((a,b)=>{
-      return b!=id
+//   function d(id){
+//     console.log(id,"hehehehe");
+//       let filterData= apiData.filter((a,b)=>{
+//       return b!=id
 
-    })
-    SetApiData(filterData)
+//     })
+//     SetApiData(filterData)
     
 
+//   }
+
+//   return (
+
+//     <div>
+//       {
+//         apiData.map((val,index) => {
+//           console.log(val, "heheheh");
+//           return (<div id='main' >
+//             <div id='card' onClick={()=>d(index)}>
+//               <img src={val.image} />
+//               <h4>{val.name}</h4>
+//             </div>
+
+//           </div>)
+//         })
+//       }
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import React, { useState } from 'react'
+const App = () => {
+  let [data,SetData]=useState('')
+  function fun1(e){
+    console.log(e.target.value);
+    SetData(e.target.value) 
   }
-
+  function store(){
+    localStorage.setItem('user',data)
+  }
   return (
-
     <div>
-      {
-        apiData.map((val,index) => {
-          console.log(val, "heheheh");
-          return (<div id='main' >
-            <div id='card' onClick={()=>d(index)}>
-              <img src={val.image} />
-              <h4>{val.name}</h4>
-            </div>
-
-          </div>)
-        })
-      }
+      <h1> {data}</h1>
+      <input  onChange={fun1} placeholder='Enter your name'/>
+      <button onClick={store}>click</button>
     </div>
   )
 }
