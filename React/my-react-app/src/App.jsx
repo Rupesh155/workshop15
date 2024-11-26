@@ -68,7 +68,7 @@
 //   }
 
 //        </div>
-       
+
 //   )
 // }
 
@@ -91,42 +91,83 @@
 //   )
 // }
 
+9993671830
+
+
+// export default App
+
+// import React, { useEffect, useState } from 'react'
+// const App = () => {
+//   console.log('helloooooo');
+//   let [count,SetCount]=useState(0)
+//   let [state,SetState]=useState('delhi')
+//   useEffect(()=>{
+
+//   },[count])
+//   function fun1(){
+//     SetCount(count+1)
+//   }
+//   return (
+//     <div>
+//       <h2> {count}</h2>
+//       <button onClick={fun1}> click</button>
+//       <h1> {state}</h1>
+//       <button onClick={()=>{SetState('jabalpur')}}>city</button>
+//     </div>
+//   )
+// }
+
 // export default App
 
 
 
+
 import React, { useEffect, useState } from 'react'
+import './App.css'
 const App = () => {
-  // console.log('helloooooo');
-  
+  let [apiData, SetApiData] = useState([])
+  console.log('hellloooo');
 
-  useEffect(()=>{
+  useEffect(() => {
+    fetch('https://dummyjson.com/recipes').then((res) => {
+      return res.json()
 
-  fetch('https://dummyjson.com/recipes').then((res)=>{
-    return res.json()
+    }).then((data) => {
+      console.log(data);
+      SetApiData(data.recipes)
 
-  }).then((data)=>{
-    console.log(data);
-    
+    })
+  }, [])
 
-  })
 
-  },[])
-
-  
-  let [count,SetCount]=useState(0)
-  function fun1(){
-    SetCount(count+1)
-  }
   return (
+
     <div>
-      <h2> {count}</h2>
-      <button onClick={fun1}> click</button>
+      {
+        apiData.map((val) => {
+          console.log(val, "heheheh");
+
+          return (<div id='main' >
+            <div id='card'>
+              <img src={val.
+                image} />
+              <h4>{val.name}</h4>
+            </div>
+
+          </div>)
+        })
+      }
     </div>
   )
 }
 
 export default App
+
+
+
+
+
+
 
 
 
