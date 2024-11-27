@@ -271,7 +271,7 @@ import { Route,Routes } from 'react-router-dom'
 import Home from './Home'
 import About from './About'
 const App = () => {
-  npm  i react-router-dom
+  // npm  i react-router-dom
   return (
     <div>
       <NavBar/>
