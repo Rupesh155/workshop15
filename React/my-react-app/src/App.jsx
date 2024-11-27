@@ -271,6 +271,8 @@ import { Route,Routes } from 'react-router-dom'
 import Home from './Home'
 import About from './About'
 import Contact from './Contact'
+import SignUp from './SignUp'
+import Login from './Login'
 const App = () => {
   // npm  i react-router-dom
   return (
@@ -278,8 +280,8 @@ const App = () => {
       <NavBar/>
       <Routes>
         <Route  path='/'  element={<Home/>}/>
-        <Route  path='/about'  element={<About/>}/>
-        <Route  path='/contact'  element={<Contact/>}/>
+        <Route  path='/signup'  element={<SignUp/>}/>
+        <Route  path='/login'  element={<Login/>}/>
 
       </Routes>
     </div>
