@@ -1,4 +1,4 @@
-#main{
+/* #main{
   display: inline-block;
 }
 #card{
@@ -16,4 +16,20 @@
   border-radius: 21px;
 
   width: 100%;
+} */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+nav{
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+}
+li{
+  /* background-color: aliceblue; */
+  color: wheat;
 }

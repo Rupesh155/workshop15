@@ -196,46 +196,50 @@
 
 
 
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+// const App = () => {
+//   let [input,SetInput]=useState({
+//     name:"",
+//     email:"",
+//     passWord:""
 
-const App = () => {
-  let [input,SetInput]=useState({
-    name:"",
-    email:"",
-    passWord:""
+//   })
+//   function fun1(a){
+//     let {name,value}=a.target
+//     // console.log(name,value,'hellloo');
+//     SetInput({...input,[name]:value})
+//     console.log(input,"isse dekhooo");
 
-  })
-  function fun1(a){
-    let {name,value}=a.target
-    // console.log(name,value,'hellloo');
-    SetInput({...input,[name]:value})
-    console.log(input,"isse dekhooo");
-
-        // console.log(   a.target);
+//         // console.log(   a.target);
       
-    // SetInput(a.target.value
-  }
-  return (
-    <div>
-    <fieldset>  
-      <legend> Form</legend>
-      <form>
-        <input onChange={fun1} name='name' value={input.name}  placeholder='Enter your name' />
-        <br></br>
-        <br></br>
+//     // SetInput(a.target.value
+//   }
+//   function done(){
+//     localStorage.setItem('user',JSON.stringify(input))
+//    let data=   localStorage.getItem('user')
 
-        <input placeholder='Enter email'  name='email'  value={input.email} onChange={fun1}  />
-        <br></br>
-        <br></br>
-        <input  type='password'  onChange={fun1}  name='passWord'  value={input.passWord} placeholder='Enter password' />
+//   }
+//   return (
+//     <div>
+//     <fieldset>  
+//       <legend> Form</legend>
+//       <form>
+//         <input onChange={fun1} name='name' value={input.name}  placeholder='Enter your name' />
+//         <br></br>
+//         <br></br>
 
-      </form>
-      </fieldset>
-    </div>
-  )
-}
+//         <input placeholder='Enter email'  name='email'  value={input.email} onChange={fun1}  />
+//         <br></br>
+//         <br></br>
+//         <input  type='password'  onChange={fun1}  name='passWord'  value={input.passWord} placeholder='Enter password' />
+//        <button onClick={done}> save</button>
+//       </form>
+//       </fieldset>
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
 
 
 
@@ -252,8 +256,32 @@ export default App
 
 
 
+// http://localhost:5173/about
 
 
 
 
 
+
+
+import React from 'react'
+import NavBar from './NavBar'
+import './App.css'
+import { Route,Routes } from 'react-router-dom'
+import Home from './Home'
+import About from './About'
+const App = () => {
+  npm  i react-router-dom
+  return (
+    <div>
+      <NavBar/>
+      <Routes>
+        <Route  path='/'  element={<Home/>}/>
+        <Route  path='/about'  element={<About/>}/>
+
+      </Routes>
+    </div>
+  )
+}
+
+export default App
