@@ -11,8 +11,8 @@ const NavBar = () => {
             <Link to='/signup'> 
             <li>SignUp</li>
             </Link>
-           <Link to={'/login'}>
-            <li>Login</li>
+           <Link to={'/cart'}>
+            <li>Cart</li>
             </Link>
 
         </nav>
