@@ -264,120 +264,134 @@
 
 
 
-import React,{useState} from 'react'
-import NavBar from './NavBar'
-import './App.css'
-import { Route,Routes } from 'react-router-dom'
-import Home from './Home'
-import About from './About'
-import Contact from './Contact'
-import SignUp from './SignUp'
-import Login from './Login'
-import Cart from './Cart'
+// import React,{useState} from 'react'
+// import NavBar from './NavBar'
+// import './App.css'
+// import { Route,Routes } from 'react-router-dom'
+// import Home from './Home'
+// import About from './About'
+// import Contact from './Contact'
+// import SignUp from './SignUp'
+// import Login from './Login'
+// import Cart from './Cart'
+// const App = () => {
+//   // npm  i react-router-dom
+//   let [cartData,SetCartData]=useState([])
+//   return (
+//     <div>
+//       <NavBar/>
+//       <Routes>
+//         <Route  path='/'  element={<Home cartData={cartData}  SetCartData={SetCartData}/>}/>
+//         <Route  path='/signup'  element={<SignUp/>}/>
+//         <Route  path='/cart'  element={<Cart  cartData={cartData}/>}/>
+
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// // import React, { useState } from 'react'
+
+// // const App = () => {
+// //   let [count,SetCount]=useState(0)
+// //   return (
+// //     <div>
+// //       <h2> {count}</h2>
+// //       <button onClick={()=>SetCount(count+1)}> click</button>
+// //     </div>
+// //   )
+// // }
+
+// // export default App
+
+
+
+
+
+// // import React, { useReducer } from 'react'
+
+// // const App = () => {
+// //   function reduser(count,action){
+// //     if(action.type==='incre'){
+// //       return count+1
+
+// //     }
+// //     else if(action.type==='d'){
+// //       return count-1
+// //     }
+// //     else if(action.type==='reset'){
+// //       return 0
+// //     }
+// //     else{
+// //       return count
+// //     }
+
+// //   }
+// //       let [count,disptach]=      useReducer(reduser,0)
+// //       function fun1(){
+// //         disptach({
+// //           type:"incre"
+
+// //         })
+
+
+// //       }
+// //   return (
+// //     <div>
+// //       <h2> {count}</h2>
+// //       <button  onClick={fun1}>++</button>
+// //       <button  onClick={()=>disptach({type:'d'})}>--</button>
+// //       <button  onClick={()=>disptach({type:'reset'})}>reset</button>
+// //     </div>
+// //   )
+// // }
+
+// // export default App
+
+          
+
+// // import React, { useReducer } from 'react'
+
+// // const App = () => {
+// //   function reduser(color,action){{
+// //     if(action.type=='red'){
+// //       return color='red'
+// //     }
+// //     else if(action.type=='green'){
+// //       return color='green'
+// //     }
+// //     else{
+// //       return color
+// //     }
+// //   }
+ 
+
+// //   }
+// //   let [color,disptach]=useReducer(reduser,'gold')
+// //   return (
+// //     <div style={{backgroundColor:color,height:'400px'}}>
+// //       <button onClick={()=>disptach({type:"red"})}>red</button>
+// //       <button onClick={()=>disptach({type:"green"})}>green</button>
+// //       <button onClick={()=>disptach({type:"blue"})}>blue</button>
+
+// //     </div>
+// //   )
+// // }
+
+// // export default App
+
+
+
+import React from 'react'
+import Home from './Home.jsx'
 const App = () => {
-  // npm  i react-router-dom
-  let [cartData,SetCartData]=useState([])
   return (
     <div>
-      <NavBar/>
-      <Routes>
-        <Route  path='/'  element={<Home cartData={cartData}  SetCartData={SetCartData}/>}/>
-        <Route  path='/signup'  element={<SignUp/>}/>
-        <Route  path='/cart'  element={<Cart  cartData={cartData}/>}/>
-
-      </Routes>
+      <Home/>
     </div>
   )
 }
 
 export default App
-
-// import React, { useState } from 'react'
-
-// const App = () => {
-//   let [count,SetCount]=useState(0)
-//   return (
-//     <div>
-//       <h2> {count}</h2>
-//       <button onClick={()=>SetCount(count+1)}> click</button>
-//     </div>
-//   )
-// }
-
-// export default App
-
-
-
-
-
-// import React, { useReducer } from 'react'
-
-// const App = () => {
-//   function reduser(count,action){
-//     if(action.type==='incre'){
-//       return count+1
-
-//     }
-//     else if(action.type==='d'){
-//       return count-1
-//     }
-//     else if(action.type==='reset'){
-//       return 0
-//     }
-//     else{
-//       return count
-//     }
-
-//   }
-//       let [count,disptach]=      useReducer(reduser,0)
-//       function fun1(){
-//         disptach({
-//           type:"incre"
-
-//         })
-
-
-//       }
-//   return (
-//     <div>
-//       <h2> {count}</h2>
-//       <button  onClick={fun1}>++</button>
-//       <button  onClick={()=>disptach({type:'d'})}>--</button>
-//       <button  onClick={()=>disptach({type:'reset'})}>reset</button>
-//     </div>
-//   )
-// }
-
-// export default App
-
-          
-
-// import React, { useReducer } from 'react'
-
-// const App = () => {
-//   function reduser(color,action){{
-//     if(action.type=='red'){
-//       return color='red'
-//     }
-//     else if(action.type=='green'){
-//       return color='green'
-//     }
-//     else{
-//       return color
-//     }
-//   }
- 
-
-//   }
-//   let [color,disptach]=useReducer(reduser,'gold')
-//   return (
-//     <div style={{backgroundColor:color,height:'400px'}}>
-//       <button onClick={()=>disptach({type:"red"})}>red</button>
-//       <button onClick={()=>disptach({type:"green"})}>green</button>
-//       <button onClick={()=>disptach({type:"blue"})}>blue</button>
-
-//     </div>
-//   )
-// }
-
-// export default App

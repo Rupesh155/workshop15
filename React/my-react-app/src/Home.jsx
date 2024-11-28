@@ -69,24 +69,41 @@
 
 
 
-import React, { useEffect, useState } from 'react'
-import './Home.css'
-import OneCard from './OneCard'
-const Home = ({cartData,SetCartData}) => {
-  let [apiData,SetApiData]=useState([])
-useEffect(()=>{
-  fetch('https://dummyjson.com/recipes').then((res)=>{
-    return res.json()
+// import React, { useEffect, useState } from 'react'
+// import './Home.css'
+// import OneCard from './OneCard'
+// const Home = ({cartData,SetCartData}) => {
+//   let [apiData,SetApiData]=useState([])
+// useEffect(()=>{
+//   fetch('https://dummyjson.com/recipes').then((res)=>{
+//     return res.json()
 
-  }).then((data)=>{
-    console.log(data,"kyaaaa");
-    SetApiData(data.recipes)
-  })
+//   }).then((data)=>{
+//     console.log(data,"kyaaaa");
+//     SetApiData(data.recipes)
+//   })
 
-},[])
+// },[])
+//   return (
+//     <div>
+//     <OneCard  cartData={cartData}  SetCartData={SetCartData}   apiData={apiData}/>
+//     </div>
+//   )
+// }
+
+// export default Home
+
+
+
+
+import React, { useContext } from 'react'
+import Context from './Context'
+
+const Home = () => {
+   let data=    useContext(Context)
   return (
     <div>
-    <OneCard  cartData={cartData}  SetCartData={SetCartData}   apiData={apiData}/>
+      <h1> {data}</h1>
     </div>
   )
 }
