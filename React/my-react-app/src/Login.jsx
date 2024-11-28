@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 const Login = () => {
     let [input,SetInput]=useState({
         email:"",
@@ -7,7 +6,6 @@ const Login = () => {
     })
 
     function fun1(e){
-    
         let {name,value}= e.target
         SetInput({...input,[name]:value})
     }
@@ -26,8 +24,6 @@ function done(){
 }
   return (
     <div>    <fieldset> 
-
-  
      <input  onChange={fun1} name='email'  value={input.email} placeholder='Enter your email'/>
      <br></br>
      <br></br>

@@ -264,26 +264,86 @@
 
 
 
-import React from 'react'
-import NavBar from './NavBar'
-import './App.css'
-import { Route,Routes } from 'react-router-dom'
-import Home from './Home'
-import About from './About'
-import Contact from './Contact'
-import SignUp from './SignUp'
-import Login from './Login'
+// import React from 'react'
+// import NavBar from './NavBar'
+// import './App.css'
+// import { Route,Routes } from 'react-router-dom'
+// import Home from './Home'
+// import About from './About'
+// import Contact from './Contact'
+// import SignUp from './SignUp'
+// import Login from './Login'
+// const App = () => {
+//   // npm  i react-router-dom
+//   return (
+//     <div>
+//       <NavBar/>
+//       <Routes>
+//         <Route  path='/'  element={<Home/>}/>
+//         <Route  path='/signup'  element={<SignUp/>}/>
+//         <Route  path='/login'  element={<Login/>}/>
+
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   let [count,SetCount]=useState(0)
+//   return (
+//     <div>
+//       <h2> {count}</h2>
+//       <button onClick={()=>SetCount(count+1)}> click</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+
+import React, { useReducer } from 'react'
+
 const App = () => {
-  // npm  i react-router-dom
+  function reduser(count,action){
+    if(action.type==='incre'){
+      return count+1
+
+    }
+    else if(action.type==='d'){
+      return count-1
+    }
+    else if(action.type==='reset'){
+      return 0
+    }
+    else{
+      return count
+    }
+
+  }
+      let [count,disptach]=      useReducer(reduser,0)
+      function fun1(){
+        disptach({
+          type:"incre"
+
+        })
+
+
+      }
   return (
     <div>
-      <NavBar/>
-      <Routes>
-        <Route  path='/'  element={<Home/>}/>
-        <Route  path='/signup'  element={<SignUp/>}/>
-        <Route  path='/login'  element={<Login/>}/>
+      <h2> {count}</h2>
+      <button  onClick={fun1}>++</button>
+      <button  onClick={()=>disptach({type:'d'})}>--</button>
+      <button  onClick={()=>disptach({type:'reset'})}>reset</button>
 
-      </Routes>
+
     </div>
   )
 }
