@@ -264,7 +264,7 @@
 
 
 
-import React from 'react'
+import React,{useState} from 'react'
 import NavBar from './NavBar'
 import './App.css'
 import { Route,Routes } from 'react-router-dom'
@@ -276,13 +276,14 @@ import Login from './Login'
 import Cart from './Cart'
 const App = () => {
   // npm  i react-router-dom
+  let [cartData,SetCartData]=useState([])
   return (
     <div>
       <NavBar/>
       <Routes>
-        <Route  path='/'  element={<Home/>}/>
+        <Route  path='/'  element={<Home cartData={cartData}  SetCartData={SetCartData}/>}/>
         <Route  path='/signup'  element={<SignUp/>}/>
-        <Route  path='/cart'  element={<Cart/>}/>
+        <Route  path='/cart'  element={<Cart  cartData={cartData}/>}/>
 
       </Routes>
     </div>

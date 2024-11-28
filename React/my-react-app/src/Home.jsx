@@ -72,7 +72,7 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
 import OneCard from './OneCard'
-const Home = () => {
+const Home = ({cartData,SetCartData}) => {
   let [apiData,SetApiData]=useState([])
 useEffect(()=>{
   fetch('https://dummyjson.com/recipes').then((res)=>{
@@ -86,7 +86,7 @@ useEffect(()=>{
 },[])
   return (
     <div>
-    <OneCard    apiData={apiData}/>
+    <OneCard  cartData={cartData}  SetCartData={SetCartData}   apiData={apiData}/>
     </div>
   )
 }
