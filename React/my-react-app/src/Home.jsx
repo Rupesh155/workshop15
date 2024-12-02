@@ -96,16 +96,26 @@
 
 
 
-import React, { useContext } from 'react'
-import Context from './Context'
+// import React, { useContext } from 'react'
+// import Context from './Context'
+// const Home = () => {
+//    let data=    useContext(Context)
+//   return (
+//     <div>
+//       <h1> {data}</h1>
+//     </div>
+//   )
+// }
 
-const Home = () => {
-   let data=    useContext(Context)
-  return (
-    <div>
-      <h1> {data}</h1>
-    </div>
-  )
-}
+// export default Home
 
-export default Home
+
+
+
+
+
+
+
+
+
+
