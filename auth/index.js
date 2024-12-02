@@ -26,7 +26,7 @@ app.post('/create',  async(req,res)=>{
         let updatedPASS=      await   bcrypt.hash(user.passWord,10)
         console.log(updatedPASS,"hehehe");
         // $2b$10$mvD22Ja1hN8zJIQ8g4umLurkxJ/AZ0sHWmzw875IiRzd2zY2Clzdq 
-        
+
         let dbuser=    new User({
             firstName:user.firstName,
             lastName:user.lastNamem,
@@ -36,15 +36,34 @@ app.post('/create',  async(req,res)=>{
            await dbuser.save()
            res.send('acount cratredddddddddddddd')
      }
-
-  
     // console.log(req.body);
-    
+})
+app.post('/login', async(req,res)=>{
+     let loginData=   req.body
+       let userData=     await  User.findOne({email:loginData.email})
+       if(!userData){
+        res.send('plz create your acc.')
+
+       }
+       else{
+         let validPASSS=    await bcrypt.compare(loginData.passWord,userData.passWord)
+         if(!validPASSS){
+        res.send('Invalid passswordddd')
+
+         }
+         else{
+            res.send('login donee')
+         }
+        
+       }
 
 
 })
+
+
 
 app.listen(5000,()=>{
     console.log('server running on port no 5000');
     
 })
+// mongosh
