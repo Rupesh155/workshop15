@@ -1,7 +1,9 @@
 let express=  require('express')
  let mongoose=    require('mongoose');
 const User = require('./user');
+  let cors=    require('cors')
   let bcrypt=   require('bcrypt')
+let jwt=    require('jsonwebtoken')
  mongoose.connect('mongodb://127.0.0.1:27017/BGMI').then(()=>{
     console.log('chal gyaaaa...db'); 
   }).catch((err)=>{
@@ -11,6 +13,7 @@ const User = require('./user');
 
 let app=  express()
 app.use(express.json())
+app.use(cors())
 
 app.get('/',(req,res)=>{
     res.send('hello')
@@ -52,12 +55,19 @@ app.post('/login', async(req,res)=>{
 
          }
          else{
+            token=   jwt.sign({email:userData.email},'HEHEHEBDGWEUYGDUEWYF')
+            console.log(token);
+            
             res.send('login donee')
          }
         
        }
 
 
+})
+
+app.get('/admin',(req,res)=>{
+    res.send('gold')
 })
 
 
@@ -67,3 +77,6 @@ app.listen(5000,()=>{
     
 })
 // mongosh
+
+
+// npm i jsonwebtoken

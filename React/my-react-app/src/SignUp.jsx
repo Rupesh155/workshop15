@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import axios from 'axios'
 const SignUp = () => {
   let navigate=     useNavigate()
     let [input,SetInput]=useState({
-        name:"",
+        firstName:"",
+        lastName:"",
         email:"",
         passWord:""
     })
@@ -15,17 +16,23 @@ const SignUp = () => {
 
 
     }
-    function done(){
-        console.log(input,"hehehe");
-        localStorage.setItem('user',JSON.stringify(input))
-        navigate('/login')
+      async function done(){
+      let res=    await axios.post('http://localhost:5000/create',input)
+      console.log(res,'hello');
+      
+        // console.log(input,"hehehe");
+        // localStorage.setItem('user',JSON.stringify(input))
+        // navigate('/login')
         
     }
   return (
     <div>
         <fieldset> 
      
-         <input  onChange={fun1}  name='name'  value={input.name} placeholder='Enter your name'/>
+         <input  onChange={fun1}  name='firstName'  value={input.firstName} placeholder='Enter your firstName'/>
+         <br></br>
+         <br></br>
+         <input  onChange={fun1}  name='lastName'  value={input.lastName} placeholder='Enter your lastName'/>
          <br></br>
          <br></br>
          <input  onChange={fun1} name='email'  value={input.email}  placeholder='Enter your email'/>

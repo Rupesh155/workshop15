@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 const Login = () => {
     let [input,SetInput]=useState({
@@ -10,16 +11,22 @@ const Login = () => {
         SetInput({...input,[name]:value})
     }
 
-function done(){
-   let localData=   localStorage.getItem('user')
-   let newData=    JSON.parse(localData)
-   console.log(newData,"hehehe");
-   if(newData.email==input.email && newData.passWord==input.passWord){
-    alert('loginnn  doneeeeeee')
-   }
-   else{
-    alert('FAKE HO TUM')
-   }
+ async   function done(){
+
+
+ let res=   await axios.post('http://localhost:5000/login',input)
+ console.log(res,'heheheheh');
+ 
+
+  //  let localData=   localStorage.getItem('user')
+  //  let newData=    JSON.parse(localData)
+  //  console.log(newData,"hehehe");
+  //  if(newData.email==input.email && newData.passWord==input.passWord){
+  //   alert('loginnn  doneeeeeee')
+  //  }
+  //  else{
+  //   alert('FAKE HO TUM')
+  //  }
    
 }
   return (

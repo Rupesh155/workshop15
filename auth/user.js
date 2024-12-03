@@ -11,6 +11,10 @@ let mongoose  = require('mongoose')
     },passWord:{
         type:String
    
+    },
+    role:{
+        type:String,
+        enum:['admin','user']
     }
 
 

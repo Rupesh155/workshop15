@@ -385,11 +385,20 @@
 
 
 import React from 'react'
-import Home from './Home.jsx'
+// import Home from './Home.jsx'
+import SignUp from './SignUp.jsx'
+import { Route, Routes } from 'react-router-dom'
+import Login from './Login.jsx'
 const App = () => {
   return (
     <div>
-      <Home/>
+      {/* <Home/> */}
+  
+      <Routes>
+        <Route   path='/'  element={<SignUp/>}/>
+        <Route   path='/login'  element={<Login/>}/>
+
+      </Routes>
     </div>
   )
 }
